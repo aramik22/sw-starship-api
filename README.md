@@ -74,7 +74,7 @@ Devuelve una Starship por su nombre.
 ##### *Ejemplo:* 
 
 ```shell
-##### *Ejemplo:* http://localhost:8000/api/show_starship
+http://localhost:8000/api/show_starship
 
 ```
 
@@ -116,7 +116,7 @@ Devuelve la popiedad total_count de una Starship por su nombre.
 ##### *Ejemplo:* 
 
 ```shell
-##### *Ejemplo:* http://localhost:8000/api/get_total_count_starship
+http://localhost:8000/api/get_total_count_starship
 
 ```
 
@@ -177,7 +177,7 @@ Devuelve un Vehicle por su nombre.
 
 
 ```shell
-##### *Ejemplo:* http://localhost:8000/api/show_vehicle
+http://localhost:8000/api/show_vehicle
 
 ```
 
@@ -216,7 +216,7 @@ Devuelve la propiedad total_count de un Vehicle por su nombre.
 ##### *Ejemplo:* 
 
 ```shell
-##### *Ejemplo:* http://localhost:8000/api/get_total_count_vehicle
+http://localhost:8000/api/get_total_count_vehicle
 
 ```
 
@@ -243,7 +243,7 @@ Setea la propiedad total_count de un Vehicle por su nombre.
 ##### *Ejemplo:* 
 
 ```shell
-##### *Ejemplo:* http://localhost:8000/api/set_total_count_vehicle
+http://localhost:8000/api/set_total_count_vehicle
 
 ```
 
@@ -268,7 +268,7 @@ Setea la propiedad total_count de un Vehicle por su id.
 ##### *Ejemplo:* 
 
 ```shell
-##### *Ejemplo:* http://localhost:8000/api/set_total_count_vehicle_by_id
+http://localhost:8000/api/set_total_count_vehicle_by_id
 
 ```
 
@@ -293,7 +293,7 @@ Setea la propiedad total_count de una Starship por su nombre.
 ##### *Ejemplo:* 
 
 ```shell
-##### *Ejemplo:* http://localhost:8000/api/set_total_count_starship
+http://localhost:8000/api/set_total_count_starship
 
 ```
 
@@ -318,7 +318,7 @@ Setea la propiedad total_count de una Starship por su id.
 ##### *Ejemplo:* 
 
 ```shell
-##### *Ejemplo:* http://localhost:8000/api/set_total_count_starship_by_id
+http://localhost:8000/api/set_total_count_starship_by_id
 
 ```
 
@@ -343,7 +343,7 @@ Suma a la propiedad total_count de una Starship por su nombre.
 ##### *Ejemplo:* 
 
 ```shell
-##### *Ejemplo:* http://localhost:8000/api/add_total_count_starship
+http://localhost:8000/api/add_total_count_starship
 
 ```
 
@@ -368,7 +368,7 @@ Suma a la propiedad total_count de una Starship por su id.
 ##### *Ejemplo:* 
 
 ```shell
-##### *Ejemplo:* http://localhost:8000/api/add_total_count_starship_by_id
+http://localhost:8000/api/add_total_count_starship_by_id
 
 ```
 
@@ -393,7 +393,7 @@ Suma a la propiedad total_count de un Vehicle por su nombre.
 ##### *Ejemplo:* 
 
 ```shell
-##### *Ejemplo:* http://localhost:8000/api/add_total_count_vehicle
+http://localhost:8000/api/add_total_count_vehicle
 
 ```
 
@@ -418,7 +418,7 @@ Suma a la propiedad total_count de un Vehicle por su id.
 ##### *Ejemplo:* 
 
 ```shell
-##### *Ejemplo:* http://localhost:8000/api/add_total_count_vehicle_by_id
+http://localhost:8000/api/add_total_count_vehicle_by_id
 
 ```
 
@@ -443,7 +443,7 @@ Resta a la propiedad total_count de un Vehicle por su nombre.
 ##### *Ejemplo:* 
 
 ```shell
-##### *Ejemplo:* http://localhost:8000/api/subtract_total_count_vehicle
+http://localhost:8000/api/subtract_total_count_vehicle
 
 ```
 
@@ -468,7 +468,7 @@ Resta a la propiedad total_count de un Vehicle por su id.
 ##### *Ejemplo:* 
 
 ```shell
-##### *Ejemplo:* http://localhost:8000/api/subtract_total_count_vehicle_by_id
+http://localhost:8000/api/subtract_total_count_vehicle_by_id
 
 ```
 {
@@ -492,7 +492,7 @@ Resta a la propiedad total_count de una Starship por su nombre.
 ##### *Ejemplo:* 
 
 ```shell
-##### *Ejemplo:* http://localhost:8000/api/subtract_total_count_starship
+http://localhost:8000/api/subtract_total_count_starship
 
 ```
 
@@ -517,7 +517,7 @@ Resta a la propiedad total_count de una Starship por su id.
 ##### *Ejemplo:* 
 
 ```shell
-##### *Ejemplo:* http://localhost:8000/api/subtract_total_count_starship_by_id
+http://localhost:8000/api/subtract_total_count_starship_by_id
 
 ```
 {
@@ -541,7 +541,7 @@ Vuelve a bajar todas las Starships de Swapi
 ##### *Ejemplo:*
 
 ```shell
-##### *Ejemplo:* http://localhost:8000/sincronize_starships
+http://localhost:8000/sincronize_starships
 
 ```
 #### GET `/sincronize_vehicles`
@@ -557,6 +557,6 @@ Vuelve a bajar todos los Vehicles de Swapi
 ##### *Ejemplo:*
 
 ```shell
-##### *Ejemplo:* http://localhost:8000/sincronize_vehicles
+http://localhost:8000/sincronize_vehicles
 
 ```
