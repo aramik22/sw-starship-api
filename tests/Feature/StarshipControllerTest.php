@@ -33,28 +33,25 @@ class StarshipControllerTest extends TestCase
     'name' => 'CR90 corvette'
     ]);
     }
-    public function test_add_total_count_starship()
+    public function test_add_total_count_starship_failed()
     {
         $response = $this->put('/api/add_total_count_starship');
 
-        //$response->assertSee('Laravel');
-        $response->assertStatus(200);
+        $response->assertStatus(400);
 
     }
-    public function test_set_total_count_starship()
+    public function test_set_total_count_starship_failed()
     {
         $response = $this->put('/api/set_total_count_starship');
 
-        //$response->assertSee('Laravel');
-        $response->assertStatus(200);
+        $response->assertStatus(400);
 
     }
-    public function test_subtract_total_count_starship()
+    public function test_subtract_total_count_starship_failed()
     {
         $response = $this->put('/api/subtract_total_count_starship');
 
-        //$response->assertSee('Laravel');
-        $response->assertStatus(200);
+        $response->assertStatus(400);
 
     }   
     public function test_show_starship()

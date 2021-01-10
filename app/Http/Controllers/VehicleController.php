@@ -22,10 +22,13 @@ class VehicleController extends Controller
         return view('admin.vehicles')->with('vehicles_data',$vehicles_data);
     }
     public function vehicle_review(Request  $request)
-    {
+    {       
         $vehicle_data = vehicle::select('vehicles.*', 'vehicles_images.image_src')
                 ->leftjoin('vehicles_images', 'vehicles.name', '=', 'vehicles_images.name')->where('vehicles.vehicle_id', '=', $request->vehicle_id)->first();
-        return view('admin.vehicle')->with('vehicle_data',$vehicle_data);
+        if($vehicle_data){
+            return view('admin.vehicle')->with('vehicle_data',$vehicle_data);    
+        }
+        
     }    
 
     /**

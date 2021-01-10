@@ -532,11 +532,6 @@ Respuesta: The new total is 41
 
 Vuelve a bajar todas las Starships de Swapi
 
-##### *Headers:*
-
-| Name | Value |
-| --- |---| --- |
-| Content-Type | application/json |
 
 ##### *Ejemplo:*
 
@@ -548,11 +543,6 @@ http://localhost:8000/sincronize_starships
 
 Vuelve a bajar todos los Vehicles de Swapi
 
-##### *Headers:*
-
-| Name | Value |
-| --- |---| --- |
-| Content-Type | application/json |
 
 ##### *Ejemplo:*
 
@@ -560,3 +550,80 @@ Vuelve a bajar todos los Vehicles de Swapi
 http://localhost:8000/sincronize_vehicles
 
 ```
+
+## WEB documentacion
+
+La Web fué desarrollada con el fín de implementar la API y a su vez tener una Interface Visual para complementar el Projecto.
+Usé AdminLTE el cuál lo integré a LARAVEL utilizando blade.
+Desde la WEB se puede consultar cada vehicle y starship, ver sus datos, su total_count, y poder hacer un SET de dicha propiedad. A su vez cada Vehicle o Starship cuenta con una imagen representativa, las mismas son a modo de ejemplo y pueden no ser las reales.
+
+
+#### HOME PAGE `/home`
+
+En esta página tenemos los datos de todos los vehículos y starships de nuestro universo.
+
+```shell
+http://localhost:8000/home
+```
+
+
+```shell
+http://dynagroup.mooo.com:8071/sw-starship-api/home
+```
+
+#### STARSHIPS PAGE `/starships`
+
+En esta página tenemos los datos de todos los starships de nuestro universo.
+
+```shell
+http://localhost:8000/starships
+```
+```shell
+http://dynagroup.mooo.com:8071/sw-starship-api/starships
+```
+
+#### STARSHIP PAGE `/starship`
+
+En esta página tenemos la info del starship seleccionado y podremos setear el nuevo total_count.
+
+```shell
+http://localhost:8000/starship/1
+```
+```shell
+http://dynagroup.mooo.com:8071/sw-starship-api/starship/1
+```
+
+#### VEHICLES PAGE `/vehicles`
+
+En esta página tenemos los datos de todos los vehicles de nuestro universo.
+
+```shell
+http://localhost:8000/vehicles
+```
+```shell
+http://dynagroup.mooo.com:8071/sw-starship-api/vehicles
+```
+
+#### VEHICLE PAGE `/vehicle`
+
+En esta página tenemos la info del vehicle seleccionado y podremos setear el nuevo total_count.
+
+```shell
+http://localhost:8000/vehicle/7
+```
+```shell
+http://dynagroup.mooo.com:8071/sw-starship-api/vehicle/7
+```
+
+
+## TEST 
+
+Cree algunos test en Feature.
+
+## DATABASE 
+
+La misma esta hecha con sqlite3 en /database
+Son 4 tablas, vehicles, starships, vehicles_images y starships_images.
+Para no perder las imágenes cargadas al momento de resincronizar con swapi en caso de hacerlo, las mismas fueron vinculadas utilizando el campo "name" de vehicles y starships, que es unique, en lugar de usar un id para hacerlo.
+
+<p align="center"><a><img src="https://i.ibb.co/0qsbR9t/Captura-de-pantalla-de-2021-01-10-16-32-30.png" width="800"></a></p>

@@ -28,8 +28,10 @@ class StarshipController extends Controller
     {
         $starship_data = Starship::select('starships.*', 'starships_images.image_src')
                 ->leftjoin('starships_images', 'starships.name', '=', 'starships_images.name')->where('starships.starship_id', '=', $request->starship_id)->first();
+        if($starship_data){
+            return view('admin.starship')->with('starship_data',$starship_data);    
+        }
         
-        return view('admin.starship')->with('starship_data',$starship_data);
     }
     public function starship_data()
 
