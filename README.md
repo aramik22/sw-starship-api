@@ -187,3 +187,260 @@ Respuesta:
   "vehicle_class": "airspeeder",
   "total_count": "0"
 }
+#### GET `/api/get_total_count_vehicle`
+
+Devuelve la propiedad total_count de un Vehicle por su nombre.
+
+##### *Headers:*
+
+| Name | Value |
+| --- |---| --- |
+| Content-Type | application/json |
+
+##### *Ejemplo:* http://localhost:8000/api/get_total_count_vehicle
+
+{
+	"name": "Snowspeeder"
+	
+}
+
+Respuesta:
+
+{
+  "total_count": "444"
+} 
+#### PUT `/api/set_total_count_vehicle`
+
+Setea la propiedad total_count de un Vehicle por su nombre.
+
+##### *Headers:*
+
+| Name | Value |
+| --- |---| --- |
+| Content-Type | application/json |
+
+##### *Ejemplo:* http://localhost:8000/api/set_total_count_vehicle
+
+{
+	"name": "Snowspeeder",
+	"total_count": "19"
+	
+}
+
+Respuesta: The new total of Snowspeeder is 19
+
+#### PUT `/api/set_total_count_vehicle_by_id`
+
+Setea la propiedad total_count de un Vehicle por su id.
+
+##### *Headers:*
+
+| Name | Value |
+| --- |---| --- |
+| Content-Type | application/json |
+
+##### *Ejemplo:* http://localhost:8000/api/set_total_count_vehicle_by_id
+
+{
+	"vehicle_id": "2",
+	"total_count": "3"
+	
+}
+
+Respuesta: The new total is 3
+
+#### PUT `/api/set_total_count_starship`
+
+Setea la propiedad total_count de una Starship por su nombre.
+
+##### *Headers:*
+
+| Name | Value |
+| --- |---| --- |
+| Content-Type | application/json |
+
+##### *Ejemplo:* http://localhost:8000/api/set_total_count_starship
+
+{
+	"name": "Y-wing",
+	"total_count": "23"
+	
+}
+
+Respuesta: The new total of Y-wing is 23
+
+#### PUT `/api/set_total_count_starship_by_id`
+
+Setea la propiedad total_count de una Starship por su id.
+
+##### *Headers:*
+
+| Name | Value |
+| --- |---| --- |
+| Content-Type | application/json |
+
+##### *Ejemplo:* http://localhost:8000/api/set_total_count_starship_by_id
+
+{
+	"starship_id": "7",
+	"total_count": "45"
+	
+}
+
+Respuesta: The new total is 45
+
+#### PUT `/api/add_total_count_starship`
+
+Suma a la propiedad total_count de una Starship por su nombre.
+
+##### *Headers:*
+
+| Name | Value |
+| --- |---| --- |
+| Content-Type | application/json |
+
+##### *Ejemplo:* http://localhost:8000/api/add_total_count_starship
+{
+	"name": "Y-wing",
+	"add": "3"
+	
+}
+
+Respuesta: The new total of Y-wing is 26
+
+#### PUT `/api/add_total_count_starship_by_id`
+
+Suma a la propiedad total_count de una Starship por su id.
+
+##### *Headers:*
+
+| Name | Value |
+| --- |---| --- |
+| Content-Type | application/json |
+
+##### *Ejemplo:* http://localhost:8000/api/add_total_count_starship_by_id
+
+{
+	"starship_id": "8",
+	"add": "41"
+	
+}
+
+Respuesta: The new total is 41
+
+#### PUT `/api/add_total_count_vehicle`
+
+Suma a la propiedad total_count de un Vehicle por su nombre.
+
+##### *Headers:*
+
+| Name | Value |
+| --- |---| --- |
+| Content-Type | application/json |
+
+##### *Ejemplo:* http://localhost:8000/api/add_total_count_vehicle
+{
+	"name": "Bantha-II cargo skiff",
+	"add": "11"
+	
+}
+
+Respuesta: TThe new total of Bantha-II cargo skiff is 11
+
+#### PUT `/api/add_total_count_vehicle_by_id`
+
+Suma a la propiedad total_count de un Vehicle por su id.
+
+##### *Headers:*
+
+| Name | Value |
+| --- |---| --- |
+| Content-Type | application/json |
+
+##### *Ejemplo:* http://localhost:8000/api/add_total_count_vehicle_by_id
+
+{
+	"vehicle_id": "14",
+	"add": "57"
+	
+}
+
+Respuesta: The new total is 57
+
+#### PUT `/api/subtract_total_count_vehicle`
+
+Resta a la propiedad total_count de un Vehicle por su nombre.
+
+##### *Headers:*
+
+| Name | Value |
+| --- |---| --- |
+| Content-Type | application/json |
+
+##### *Ejemplo:* http://localhost:8000/api/subtract_total_count_vehicle
+{
+	"name": "Bantha-II cargo skiff",
+	"subtract": "1"
+	
+}
+
+Respuesta: TThe new total of Bantha-II cargo skiff is 11
+
+#### PUT `/api/subtract_total_count_vehicle_by_id`
+
+Resta a la propiedad total_count de un Vehicle por su id.
+
+##### *Headers:*
+
+| Name | Value |
+| --- |---| --- |
+| Content-Type | application/json |
+
+##### *Ejemplo:* http://localhost:8000/api/subtract_total_count_vehicle_by_id
+
+{
+	"vehicle_id": "14",
+	"subtract": "3"
+	
+}
+
+Respuesta: The new total is 57
+
+#### PUT `/api/subtract_total_count_starship`
+
+Resta a la propiedad total_count de una Starship por su nombre.
+
+##### *Headers:*
+
+| Name | Value |
+| --- |---| --- |
+| Content-Type | application/json |
+
+##### *Ejemplo:* http://localhost:8000/api/subtract_total_count_starship
+{
+	"name": "Y-wing",
+	"subtract": "3"
+	
+}
+
+Respuesta: The new total of Y-wing is 26
+
+#### PUT `/api/subtract_total_count_starship_by_id`
+
+rResta a la propiedad total_count de una Starship por su id.
+
+##### *Headers:*
+
+| Name | Value |
+| --- |---| --- |
+| Content-Type | application/json |
+
+##### *Ejemplo:* http://localhost:8000/api/subtract_total_count_starship_by_id
+
+{
+	"starship_id": "8",
+	"subtract": "1"
+	
+}
+
+Respuesta: The new total is 41
