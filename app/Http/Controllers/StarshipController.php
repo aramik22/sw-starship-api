@@ -42,6 +42,7 @@ class StarshipController extends Controller
     }
     public function set_total_count_starship_by_id(Request  $request)
     {   
+        $input = $request->all();
         $validator = Validator::make($input, [
             'total_count' => 'integer|required|min:0',
         ]);
