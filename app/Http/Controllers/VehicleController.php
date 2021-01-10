@@ -59,13 +59,13 @@ class VehicleController extends Controller
             'total_count' => 'integer|required',
         ]);
         if($validator->fails()){
-            return "total_count debe ser un número entero.";
+            return response()->json(['message' => 'total_count must be an integer.'], 400);
         }
         $validator = Validator::make($input, [
             'name' => 'required',
         ]);
         if($validator->fails()){
-            return "name es requerido";
+            return response()->json(['message' => 'Name is required.'], 400);
         }          
         $vehicle = Vehicle::where('name', $request->name)->first();
         if($vehicle) {
@@ -76,6 +76,14 @@ class VehicleController extends Controller
     }
     public function set_total_count_vehicle_by_id(Request  $request)
     {   
+        $input = $request->all();
+        $validator = Validator::make($input, [
+            'total_count' => 'integer|required',
+        ]);
+        if($validator->fails()){
+            return back();
+        }else
+        {
         $vehicle = Vehicle::where('vehicle_id', $request->vehicle_id)->first();
         if($vehicle) 
         {
@@ -83,6 +91,8 @@ class VehicleController extends Controller
 
         }
         return back();
+        }        
+
 
     }
     public function set_total_count_vehicle_by_id_api(Request  $request)
@@ -92,13 +102,13 @@ class VehicleController extends Controller
             'total_count' => 'integer|required',
         ]);
         if($validator->fails()){
-            return "total_count debe ser un número entero.";
+            return response()->json(['message' => 'total_count must be an integer.'], 400);
         }
         $validator = Validator::make($input, [
             'vehicle_id' => 'integer|required',
         ]);
         if($validator->fails()){
-            return "vehicle_id es requerido";
+            return response()->json(['message' => 'vehicle_id is required.'], 400);
         }          
         $vehicle = Vehicle::where('vehicle_id', $request->vehicle_id)->first();
         if($vehicle) 
@@ -116,13 +126,13 @@ class VehicleController extends Controller
             'add' => 'integer|required',
         ]);
         if($validator->fails()){
-            return "add must be an integer greater than 0.";
+            return response()->json(['message' => 'add must be an integer greater than 0.'], 400);
         }
         $validator = Validator::make($input, [
             'name' => 'required',
         ]);
         if($validator->fails()){
-            return "name es requerido";
+            return response()->json(['message' => 'name is required.'], 400);
         }         
         $vehicle = Vehicle::where('name', $request->name)->first();
 
@@ -140,13 +150,13 @@ class VehicleController extends Controller
             'add' => 'integer|required|min:0',
         ]);
         if($validator->fails()){
-            return "add must be an integer greater than 0.";
+            return response()->json(['message' => 'add must be an integer greater than 0.'], 400);
         }
         $validator = Validator::make($input, [
             'vehicle_id' => 'integer|required',
         ]);
         if($validator->fails()){
-            return "vehicle_id must be an integer.";
+            return response()->json(['message' => 'vehicle_id must be an integer.'], 400);   
         }             
         $vehicle = Vehicle::where('vehicle_id', $request->vehicle_id)->first();
 
@@ -164,19 +174,19 @@ class VehicleController extends Controller
             'subtract' => 'integer|required|min:0',
         ]);
         if($validator->fails()){
-            return "subtract must be an integer greater than 0";
+            return response()->json(['message' => 'subtract must be an integer greater than 0'], 400); 
         }
         $validator = Validator::make($input, [
             'name' => 'required',
         ]);
         if($validator->fails()){
-            return "name is required";
+            return response()->json(['message' => 'Name is required'], 400);
         }  
         $vehicle = Vehicle::where('name', $request->name)->first();
 
         if($vehicle) {
             if((int)$vehicle->total_count - (int)$request->subtract < 0){
-                return "The new total cannot be less than 0.";
+                return response()->json(['message' => 'The new total cannot be less than 0.'], 400);
             }
             else
             {
@@ -194,19 +204,19 @@ public function subtract_total_count_vehicle_by_id(Request  $request)
             'subtract' => 'integer|required|min:0',
         ]);
         if($validator->fails()){
-            return "subtract must be an integer greater than 0";
+            return response()->json(['message' => 'subtract must be an integer greater than 0.'], 400);
         }
         $validator = Validator::make($input, [
             'vehicle_id' => 'integer|required',
         ]);
         if($validator->fails()){
-            return "vehicle_id must be an integer";
+            return response()->json(['message' => 'vehicle_id must be an integer.'], 400);
         }             
         $vehicle = Vehicle::where('vehicle_id', $request->vehicle_id)->first();
 
         if($vehicle) {
             if((int)$vehicle->total_count - (int)$request->subtract < 0){
-                return "The new total cannot be less than 0.";
+                return response()->json(['message' => 'The new total cannot be less than 0.'], 400);
             }
             else
             {

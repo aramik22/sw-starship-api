@@ -39,14 +39,24 @@ class StarshipController extends Controller
 
     }
     public function set_total_count_starship_by_id(Request  $request)
-    {     
-        $starship = Starship::where('starship_id', $request->starship_id)->first();
-        if($starship) 
-        {
-            starship::where('starship_id', $request->starship_id)->update(['total_count' => $request->total_count]);
-
+    {   
+        $validator = Validator::make($input, [
+            'total_count' => 'integer|required|min:0',
+        ]);
+        if($validator->fails()){
+            return back();
         }
-        return back();
+        else
+        {
+            $starship = Starship::where('starship_id', $request->starship_id)->first();
+            if($starship) 
+            {
+                starship::where('starship_id', $request->starship_id)->update(['total_count' => $request->total_count]);
+
+            }
+            return back();            
+        }      
+
 
     }
     public function set_total_count_starship_by_id_api(Request  $request)
@@ -56,13 +66,14 @@ class StarshipController extends Controller
             'total_count' => 'integer|required|min:0',
         ]);
         if($validator->fails()){
-            return "total_count must be an integer greater than 0.";
+            return response()->json(['message' => 'total_count must be an integer greater than 0.'], 400);
         }
         $validator = Validator::make($input, [
             'starship_id' => 'integer|required',
         ]);
         if($validator->fails()){
-            return "starship_id must be an integer.";
+            return response()->json(['message' => 'starship_id must be an integer.'], 400);
+
         }             
         $starship = Starship::where('starship_id', $request->starship_id)->first();
         if($starship) 
@@ -152,13 +163,13 @@ class StarshipController extends Controller
             'total_count' => 'integer|required|min:0',
         ]);
         if($validator->fails()){
-            return "total_count must be an integer greater than 0.";
+            return response()->json(['message' => 'total_count must be an integer greater than 0.'], 400);
         }
         $validator = Validator::make($input, [
             'name' => 'required',
         ]);
         if($validator->fails()){
-            return "name is required.";
+            return response()->json(['message' => 'name is required.'], 400);
         }              
         $starship = Starship::where('name', $request->name)->first();
         if($starship) {
@@ -174,13 +185,14 @@ class StarshipController extends Controller
             'add' => 'integer|required|min:0',
         ]);
         if($validator->fails()){
-            return "add must be an integer greater than 0.";
+            return response()->json(['message' => 'add must be an integer greater than 0.'], 400);
         }
         $validator = Validator::make($input, [
             'name' => 'required',
         ]);
         if($validator->fails()){
-            return "name is required";
+            return response()->json(['message' => 'name is required'], 400);
+
         }             
         $starship = Starship::where('name', $request->name)->first();
 
@@ -197,13 +209,13 @@ class StarshipController extends Controller
             'add' => 'integer|required|min:0',
         ]);
         if($validator->fails()){
-            return "add must be an integer greater than 0.";
+            return response()->json(['message' => 'add must be an integer greater than 0.'], 400);
         }
         $validator = Validator::make($input, [
             'starship_id' => 'integer|required',
         ]);
         if($validator->fails()){
-            return "starship_id must be an integer.";
+            return response()->json(['message' => 'starship_id must be an integer.'], 400);
         }             
         $starship = Starship::where('starship_id', $request->starship_id)->first();
 
@@ -220,19 +232,19 @@ class StarshipController extends Controller
             'subtract' => 'integer|required|min:0',
         ]);
         if($validator->fails()){
-            return "subtract must be an integer greater than 0.";
+            return response()->json(['message' => 'subtract must be an integer greater than 0.'], 400);
         }
         $validator = Validator::make($input, [
             'name' => 'required',
         ]);
         if($validator->fails()){
-            return "name is required";
+            return response()->json(['message' => 'name is required'], 400);
         }             
         $starship = Starship::where('name', $request->name)->first();
 
         if($starship) {
             if((int)$starship->total_count - (int)$request->subtract < 0){
-                return "The new total cannot be less than 0.";
+                return response()->json(['message' => 'The new total cannot be less than 0.'], 400);
             }
             else
             {
@@ -250,19 +262,19 @@ class StarshipController extends Controller
             'subtract' => 'integer|required|min:0',
         ]);
         if($validator->fails()){
-            return "subtract must be an integer greater than 0.";
+            return response()->json(['message' => 'subtract must be an integer greater than 0.'], 400);
         }
         $validator = Validator::make($input, [
             'starship_id' => 'integer|required',
         ]);
         if($validator->fails()){
-            return "starship_id must be an integer";
+            return response()->json(['message' => 'starship_id must be an integer'], 400);
         }             
         $starship = Starship::where('starship_id', $request->starship_id)->first();
 
         if($starship) {
             if((int)$starship->total_count - (int)$request->subtract < 0){
-                return "The new total cannot be less than 0.";
+                return response()->json(['message' => 'The new total cannot be less than 0.'], 400);
             }
             else
             {
@@ -298,7 +310,16 @@ class StarshipController extends Controller
     public function get_total_count_starship(Request  $request)
     {   
         $result = Starship::where('name', $request->name)->get(['total_count'])->first();
-        return $result;
+        if($result)
+        {
+            return $result;
+        }
+        else
+        {
+            return response()->json(['message' => 'Not Found!'], 404);
+        }
+        
+         
     }
     /**
      * Update the specified resource in storage.

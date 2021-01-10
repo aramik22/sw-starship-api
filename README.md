@@ -60,11 +60,4 @@ Respuesta:
     "MGLT": "60",
     "starship_class": "corvette",
     "total_count": "444"
-<<<<<<< HEAD
   }
-=======
-  }........
-  
-  
-```
->>>>>>> 5daf14cf4352236f646969c0d98236ae5515af4a
