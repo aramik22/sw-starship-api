@@ -78,7 +78,7 @@ class StarshipControllerTest extends TestCase
         ));
         $response->assertStatus(200);        ;
     } 
-    public function test_set_set_total_count()
+    public function test_subtract_total_count()
     {
 
         $response = $this->call('PUT', '/api/subtract_total_count_starship_by_id', array(
