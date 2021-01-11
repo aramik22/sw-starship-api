@@ -1,7 +1,7 @@
 # SW-STARSHIP-API
 
 Descripción: La Api consume datos de swapi y agrega funcionalidades para agregar quitar y establecer cantidades de vehículos y starships.
-Fué desarrollada en Laravel, requiere PHP >=7.25, y sqlite3. Se utilizo dicho motor de base de datos.
+Fué desarrollada en Laravel >=7.29, requiere PHP >=7.25, y sqlite3. Se utilizo dicho motor de base de datos.
 A su vez se desarrolló una Web integrando AdminLTE a Laravel, con el objetivo de poder utilizar todas las funcionalidades de dicha api.
 La Web se encuentra disponible Online en  http://dynagroup.mooo.com:8071/sw-starship-api/home
 La Api sincroniza con swapi bajando todos los datos a nuestra DB y generando nuestro universo paralelo de Star Wars.
