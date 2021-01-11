@@ -60,4 +60,31 @@ class StarshipControllerTest extends TestCase
 
         $response->assertStatus(200);
     }
+    public function test_set_total_count()
+    {
+
+        $response = $this->call('PUT', '/api/set_total_count_starship_by_id', array(
+            'starship_id' => "1",
+            'total_count' => "125"
+        ));
+        $response->assertStatus(200);        ;
+    }
+    public function test_add_set_total_count()
+    {
+
+        $response = $this->call('PUT', '/api/add_total_count_starship_by_id', array(
+            'starship_id' => "1",
+            'add' => "5"
+        ));
+        $response->assertStatus(200);        ;
+    } 
+    public function test_set_set_total_count()
+    {
+
+        $response = $this->call('PUT', '/api/subtract_total_count_starship_by_id', array(
+            'starship_id' => "1",
+            'subtract' => "5"
+        ));
+        $response->assertStatus(200);        ;
+    }           
 }
